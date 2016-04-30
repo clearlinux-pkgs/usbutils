@@ -4,7 +4,7 @@
 #
 Name     : usbutils
 Version  : 008
-Release  : 8
+Release  : 9
 URL      : https://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-008.tar.xz
 Source0  : https://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-008.tar.xz
 Summary  : USB device database
