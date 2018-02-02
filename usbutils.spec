@@ -4,7 +4,7 @@
 #
 Name     : usbutils
 Version  : 009
-Release  : 11
+Release  : 12
 URL      : https://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-009.tar.xz
 Source0  : https://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-009.tar.xz
 Summary  : USB device database
