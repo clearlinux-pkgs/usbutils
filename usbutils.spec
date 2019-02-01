@@ -4,14 +4,15 @@
 #
 Name     : usbutils
 Version  : 010
-Release  : 14
+Release  : 16
 URL      : https://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-010.tar.xz
 Source0  : https://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-010.tar.xz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: usbutils-bin
-Requires: usbutils-man
+Requires: usbutils-bin = %{version}-%{release}
+Requires: usbutils-man = %{version}-%{release}
+BuildRequires : clr-hardware-files
 BuildRequires : pkgconfig(libudev)
 BuildRequires : pkgconfig(libusb-1.0)
 
@@ -21,7 +22,7 @@ No detailed description available
 %package bin
 Summary: bin components for the usbutils package.
 Group: Binaries
-Requires: usbutils-man
+Requires: usbutils-man = %{version}-%{release}
 
 %description bin
 bin components for the usbutils package.
@@ -43,8 +44,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1526525158
-%configure --disable-static
+export SOURCE_DATE_EPOCH=1548983174
+%configure --disable-static --datadir=/usr/share/hwdata
 make  %{?_smp_mflags}
 
 %check
@@ -55,7 +56,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1526525158
+export SOURCE_DATE_EPOCH=1548983174
 rm -rf %{buildroot}
 %make_install
 
@@ -70,7 +71,7 @@ rm -rf %{buildroot}
 /usr/bin/usbhid-dump
 
 %files man
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 /usr/share/man/man1/usb-devices.1
 /usr/share/man/man8/lsusb.8
 /usr/share/man/man8/usbhid-dump.8
