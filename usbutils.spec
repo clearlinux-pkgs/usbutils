@@ -4,7 +4,7 @@
 #
 Name     : usbutils
 Version  : 010
-Release  : 16
+Release  : 17
 URL      : https://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-010.tar.xz
 Source0  : https://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-010.tar.xz
 Summary  : No detailed summary available
