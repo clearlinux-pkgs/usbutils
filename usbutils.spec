@@ -4,7 +4,7 @@
 #
 Name     : usbutils
 Version  : 012
-Release  : 18
+Release  : 19
 URL      : https://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-012.tar.xz
 Source0  : https://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-012.tar.xz
 Summary  : No detailed summary available
@@ -34,6 +34,14 @@ Group: Binaries
 bin components for the usbutils package.
 
 
+%package extras
+Summary: extras components for the usbutils package.
+Group: Default
+
+%description extras
+extras components for the usbutils package.
+
+
 %package man
 Summary: man components for the usbutils package.
 Group: Default
@@ -51,7 +59,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1572556894
+export SOURCE_DATE_EPOCH=1574827603
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -71,7 +80,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1572556894
+export SOURCE_DATE_EPOCH=1574827603
 rm -rf %{buildroot}
 %make_install
 
@@ -81,9 +90,12 @@ rm -rf %{buildroot}
 %files bin
 %defattr(-,root,root,-)
 /usr/bin/lsusb
-/usr/bin/lsusb.py
 /usr/bin/usb-devices
 /usr/bin/usbhid-dump
+
+%files extras
+%defattr(-,root,root,-)
+/usr/bin/lsusb.py
 
 %files man
 %defattr(0644,root,root,0755)
