@@ -1,0 +1,4 @@
+018
+libusb-dev
+pkgconfig(libudev)
+pkgconfig(libusb-1.0)
